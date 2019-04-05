@@ -4,13 +4,19 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
+import { environment } from '../../environments/environment';
+
 import { HomePage } from './home.page';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    AgmCoreModule.forRoot({
+      apiKey: environment.apiKey,
+    }),
     RouterModule.forChild([
       {
         path: '',
